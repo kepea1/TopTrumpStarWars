@@ -1,0 +1,22 @@
+
+
+.CCard {
+    /* //alightn car to the right of the screen */
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.newcard {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.challengecomputer {
+    font-size: 30px;
+}
+
+

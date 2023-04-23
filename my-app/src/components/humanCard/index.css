@@ -1,0 +1,68 @@
+
+
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    align-content: center;
+    border-radius: 10px;
+    border: 2px solid white;
+    margin: 0;
+}
+
+.human-card {
+    /* 
+    background-image: url("/Users/soc/bc14_w6d5_hackathon_react-athon-room-21-lawrence-dan-keelie/my-app/src/images/star-wars-background.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; */
+    background-color: rgb(0, 0, 0);
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 500px;
+    text-align: left;
+    padding: 10px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 50px;
+    color: #ffe81f;
+    text-align: center;
+    background-color: rgb(61, 55, 55);
+}
+
+.statistic {
+    margin-top: 0em;
+    margin-bottom: 0em;
+    font-size: 20px;
+
+    /* display: flex; */
+    /* flex-flow: column nowrap; */
+    /* justify-content: space-between; */
+}
+
+.stat_name {
+    color: #000;
+    background-color: #ffe81f;
+    margin-left: 5em;
+    margin-right: 0;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    /* padding: 5px; */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.stat_value {
+    color: #ffe81f;
+    background-color: rgb(13, 14, 14);
+    margin-left: 0;
+    margin-right: 5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    text-align: right;
+    font-size: 20px;
+}

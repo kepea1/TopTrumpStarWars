@@ -1,22 +1,46 @@
 
 
-.CCard {
+/* .CCard {
     /* //alightn car to the right of the screen */
-    border: 2px solid white;
+    /* border: 2px solid white;
     border-radius: 10px;
     margin: 0;
     padding: 0;
     margin-left: 0;
     margin-right: 0;
-}
+} */ 
 
 .newcard {
     font-size: 30px;
     margin: 10px;
 }
 
+
+.cardTitles {
+    display: flex;
+    font-size: 15px;
+    margin: 10px;
+    justify-self: end;
+    justify-content: space-between;
+}
+.cardTitles:first-child {
+    text-align: left;
+}
+
+.cardTitles:last-child{
+    text-align: right;
+}
+
 .challengecomputer {
     font-size: 30px;
 }
 
+.playincg-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+flex-grow: 1;    
+margin: 0;
+    padding: 0;
+}
 

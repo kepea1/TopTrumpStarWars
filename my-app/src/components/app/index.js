@@ -45,17 +45,20 @@ export default function TrumpsApp({TrumpsAppVisible}) {
     if (TrumpsAppVisible === true) {
         return (
 
-        <div>
+        <div class="">
         
-            <h1>Star Wars Top Trumps</h1>
-            <h2> Computer Card:</h2>
-            <ComputerCard className="CCard" id={id} visible={compcardvisible} />
+                <h1>Star Wars Top Trumps</h1>
+                   <div class="cardTitles">
+                        <h2>User Card:</h2>
+                        <h2> Computer Card:</h2>
+                    </div>
 
-            <h2>User Card:</h2>
-
-            {/* <HumanCard  className="HCard" id={userId} childToParent={childToParent} visible={usercardvisible}/> */}
-            <HumanCard  className="HCard" id={userId} childToParent={childToParent} />
-
+                    <div class="playincg-cards">
+                        {/* <HumanCard  className="HCard" id={userId} childToParent={childToParent} visible={usercardvisible}/> */}
+                        <HumanCard  className="HCard" id={userId} childToParent={childToParent} />
+                 
+                        <ComputerCard className="CCard" id={id} visible={compcardvisible} />
+                    </div>
 
             <p>Youve Chosen:{data}</p>
 

@@ -14,18 +14,20 @@
 
 
 .computer-card {
-/* 
-    background-image: url("/Users/soc/bc14_w6d5_hackathon_react-athon-room-21-lawrence-dan-keelie/my-app/src/images/star-wars-background.jpeg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom; */
+   
+    display: flex;
+    flex-direction: column;
     background-color: rgb(0, 0, 0);
     font-size: 15px;
     border: 2px solid white;
     border-radius: 20px;
-    height: 500px;
     text-align: left;
     padding: 10px;
+    width: 40%;
+    
+   
+
+
 }
 
 
@@ -41,10 +43,9 @@
 .statistic {
     margin-top: 0em;
     margin-bottom: 0em;
-    
-    /* display: flex; */
-    /* flex-flow: column nowrap; */
-    /* justify-content: space-between; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     
    
 }

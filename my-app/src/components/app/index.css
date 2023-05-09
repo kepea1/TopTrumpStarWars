@@ -1,6 +1,5 @@
 
-
-.CCard {
+ .CCard { 
     /* //alightn car to the right of the screen */
     border: 2px solid white;
     border-radius: 10px;
@@ -9,8 +8,11 @@
     margin-left: 0;
     margin-right: 0;
 }
-
-.newcard {
+.HCard{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.newcard { 
     font-size: 30px;
     margin: 10px;
 }
@@ -19,4 +21,16 @@
     font-size: 30px;
 }
 
+.cardLayout {
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.cardTitles {
+    display: flex;
+    justify-content: space-between;
+}
 

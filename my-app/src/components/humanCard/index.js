@@ -1,25 +1,10 @@
 import "./index.css";
-
-//import useeffect and useState from react
 import { useEffect, useState } from "react";
 
 //repass id as props when randmoly generating and set as dependency
 
-function HumanCard({ id, childToParent }) {
-    //TODO: Task 1 - send http request to `https://pokeapi.co/api/v2/pokemon/1' and display the data
-    const [planet, setPlanet] = useState("Planet Pending...");
-    //console.log(id);
-    useEffect(() => {
-        async function fetchCard() {
-            const response = await fetch(
-                `https://swapi.dev/api/planets/${id}/`
-            );
-            const data = await response.json();
-            console.log(data);
-            setPlanet(data);
-        }
-        fetchCard();
-    }, [id]);
+function HumanCard({ id, childToParent,comparescores,planet }) {
+ 
 
     
         return (
@@ -34,7 +19,10 @@ function HumanCard({ id, childToParent }) {
                 <input
                     type="checkbox"
                     onClick={() =>
-                        childToParent(
+                        // childToParent(
+                        //     `   Rotation Period(${planet.rotation_period})`
+                        // )
+                        comparescores(
                             `   Rotation Period(${planet.rotation_period})`
                         )
                     }

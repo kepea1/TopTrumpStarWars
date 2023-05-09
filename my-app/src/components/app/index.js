@@ -24,20 +24,19 @@ export default function TrumpsApp({TrumpsAppVisible}) {
         setData("");
     }
     
-       //TODO: Task 1 - send http request to `https://pokeapi.co/api/v2/pokemon/1' and display the data
        const [planet, setPlanet] = useState("Planet Pending...");
-       //console.log(id);
+       
        useEffect(() => {
            async function fetchCard() {
                const response = await fetch(
-                   `https://swapi.dev/api/planets/${id}/`
+                   `https://swapi.dev/api/planets/${userId}/`
                );
                const data = await response.json();
                console.log(data);
                setPlanet(data);
            }
            fetchCard();
-       }, [id]);
+       }, [userId]);
       
     // function userCard() {
     //     userCardSetVisible(true);
@@ -62,15 +61,25 @@ export default function TrumpsApp({TrumpsAppVisible}) {
         comparescores();
     }
 
-    const [winner,setWinner]=useState("Winner Pending...");
-    function comparescores() {
-        if (planet.rotation_period> compPlanet.population) {
-            alert("You Win!");
-        } else if (planet.population < compPlanet.population) {
-            alert("You Lose!");
+   
+// alert coming too soon maybe put it in a use effect fuction?
+
+    function comparescores(userChoise) {
+        console.log(userChoise)
+        const userStat = userChoise[0];
+        const userValue = userChoise[1];
+        const computerValue = compPlanet[userStat]
+        console.log(computerValue)
+
+        if (userValue > computerValue) {
+            alert("you won");
+            console.log("youwon")
+        } else if (userValue < computerValue) {
+            alert("you lost");
         } else {
-            alert("Draw!");
+            alert("Draw");
         }
+//                        comparescores(["rotation_period",planet.rotation_period])
 
 
     }
@@ -91,7 +100,7 @@ export default function TrumpsApp({TrumpsAppVisible}) {
             <view className="cardLayout">
 
                 {/* <HumanCard  className="HCard" id={userId} childToParent={childToParent} visible={usercardvisible}/> */}
-                <HumanCard  className="HCard" id={userId} childToParent={childToParent} planet={planet} />
+                <HumanCard  className="HCard" id={userId} childToParent={childToParent} comparescores={comparescores} planet={planet} />
                 <ComputerCard className="CCard" id={id} visible={compcardvisible} compPlanet={compPlanet} />
 
             </view>

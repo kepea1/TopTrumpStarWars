@@ -13,7 +13,7 @@ export default function TrumpsApp({TrumpsAppVisible}) {
     const [userId, setUserId] = useState(1);
     const [compcardvisible, compCardSetVisible] = useState(false);
     // const [usercardvisible, userCardSetVisible] = useState(false);//    user card state
-
+//
 
 
     function handleClick() {

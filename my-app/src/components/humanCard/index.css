@@ -13,7 +13,7 @@
 
 .human-card {
     
-    background-image: url("/my-app/src/images/star-wars-background.jpeg");
+    background-image: url("../../images/star-wars-background.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;

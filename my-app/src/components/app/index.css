@@ -1,4 +1,6 @@
 
+
+
  .CCard { 
     /* //alightn car to the right of the screen */
     border: 2px solid white;
@@ -29,8 +31,9 @@
 }
 
 
+
 .cardTitles {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 

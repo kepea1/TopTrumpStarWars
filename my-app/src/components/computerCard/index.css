@@ -14,13 +14,22 @@
 
 
 .computer-card {
-   
+
+/* 
+    background-image: url("/Users/soc/bc14_w6d5_hackathon_react-athon-room-21-lawrence-dan-keelie/my-app/src/images/star-wars-background.jpeg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom; */
+
     display: flex;
     flex-direction: column;
     background-color: rgb(0, 0, 0);
-    font-size: 15px;
     border: 2px solid white;
     border-radius: 20px;
+
+    height: 400px;
+    width: 300px;
+
     text-align: left;
     padding: 10px;
     width: 40%;
@@ -31,23 +40,25 @@
 }
 
 
+
 .title {
     font-weight: bold;
-    font-size: 50px;
+    font-size: 20px;
     color: #ffe81f;
     text-align: center;
     background-color: rgb(61, 55, 55);
-    
 }
 
 .statistic {
     margin-top: 0em;
     margin-bottom: 0em;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    
-   
+
+    font-size: 10px;
+
+    /* display: flex; */
+    /* flex-flow: column nowrap; */
+    /* justify-content: space-between; */
+
 }
 
 .stat_name {
@@ -59,6 +70,7 @@
     margin-bottom: 0em;
     /* padding: 5px; */
     font-weight: bold;
+    font-size: 15px;
 }
 
 .stat_value {
@@ -69,7 +81,9 @@
     margin-top: 0em;
     margin-bottom: 0em;
     text-align: right;
+    font-size: 15px;
 }
+
 
 
 

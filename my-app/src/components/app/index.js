@@ -2,12 +2,7 @@ import React from "react";
 import "./index.css";
 import ComputerCard from "../computerCard";
 import HumanCard from "../humanCard";
-import { useState, useEffect } from "react";
 
-export default function TrumpsApp({ TrumpsAppVisible }) {
-  const [id, setId] = useState(2);
-  const [userId, setUserId] = useState(1);
-  const [compcardvisible, compCardSetVisible] = useState(false);
 
   function newCard() {
     let randomNumberComputer = Math.floor(Math.random() * 30 + 1);
@@ -28,6 +23,18 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       const data = await response.json();
       console.log(data);
       setPlanet(data);
+
+
+import { useState } from "react";
+
+export default function TrumpsApp({TrumpsAppVisible}) {
+
+    const [id, setId] = useState(2);
+    const [userId, setUserId] = useState(1);
+    const [compcardvisible, compCardSetVisible] = useState(false);
+    // const [usercardvisible, userCardSetVisible] = useState(false);//    user card state
+//
+
     }
     fetchCard();
   }, [userId]);
@@ -45,6 +52,7 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       console.log(data);
       setCompPlanet(data);
     }
+
     fetchCard();
   }, [id]);
 
@@ -109,6 +117,7 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
         <div className="cardTitles">
           <h2>your Card:</h2>
           <h2> Computer Card:</h2>
+
         </div>
         <p>Youve Chosen:{data}</p>
 

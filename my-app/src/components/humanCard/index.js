@@ -27,7 +27,7 @@ function HumanCard({
       </div>
 
       <div className="statistic">
-        <p className="stat_name">Orbital Period:</p>
+        <p className="stat_name">orbital Period:</p>
         <p className="stat_value">{planet.orbital_period}</p>
         <input
           type="radio"

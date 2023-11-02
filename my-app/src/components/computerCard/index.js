@@ -15,7 +15,7 @@ function ComputerCard({ id, visible, setComputerCard, compPlanet }) {
         </div>
 
         <div className="statistic">
-          <p className="stat_name">Orbital Period:</p>
+          <p className="stat_name">orbital Period:</p>
           <p className="stat_value">{compPlanet.orbital_period}</p>
           <br type="checkbox"></br>
         </div>

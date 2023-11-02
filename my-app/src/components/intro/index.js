@@ -6,7 +6,7 @@ function Intro({ introVisible }) {
       <div className="star-wars-intro">
         {/* <!-- Blue Intro Text --> */}
         <p className="intro-text">
-          A few days ago, during week 6 of Soc Hackathon,I made
+          During week 6 of School Of Code Hackathon,I made
         </p>
 
         {/* <!-- Logo Image or Text goes in here --> */}
@@ -23,22 +23,29 @@ function Intro({ introVisible }) {
             </p>
 
             <br></br>
-
             <p className="content-body">
               How to play the star wars Top Trump Game!
               <br></br>
-              1. instructions go here
               <br></br>
-              2. instructions go here
+              1. Click The Play Now Button. 
               <br></br>
-              3. instructions go here
               <br></br>
-              4. instructions go here
+              2. You Will Be Shown A Random Card Full Of Star Wars Planet Stats.
               <br></br>
-              5. instructions go here
               <br></br>
-              6. instructions go here
+              3. Dont like your card? Click The Generate New Card Button. 
               <br></br>
+              <br></br>
+              4. Choose and click a Stat from your card.
+              <br></br> 
+              <br></br>
+              5. Click the challege computer button, To See If You Have Won!
+              <br></br>
+              <br></br>
+              6.  If you want to play again click the new card button.
+              <br></br>
+              <br></br>
+              May the force be with you!
             </p>
 
             {/* <!-- button or link or whatever --> */}

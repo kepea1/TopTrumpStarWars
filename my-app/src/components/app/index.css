@@ -42,11 +42,13 @@
 .cardLayout {
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 
-
+.result{
+    width: 10rem;
+}
 
 .cardTitles {
     display: flex;

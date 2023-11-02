@@ -1,7 +1,9 @@
- .CCard {
 
+
+
+.CCard { 
     /* //alightn car to the right of the screen */
-    /* border: 2px solid white;
+    border: 2px solid white;
     border-radius: 10px;
     margin: 0;
     padding: 0;
@@ -12,27 +14,9 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
-
-.newcard {
-
+.newcard { 
     font-size: 30px;
     margin: 10px;
-}
-
-
-.cardTitles {
-    display: flex;
-    font-size: 15px;
-    margin: 10px;
-    justify-self: end;
-    justify-content: space-between;
-}
-.cardTitles:first-child {
-    text-align: left;
-}
-
-.cardTitles:last-child{
-    text-align: right;
 }
 
 .challengecomputer {
@@ -42,23 +26,16 @@
 .cardLayout {
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
 }
 
-
+.result{
+    width: 10rem;
+}
 
 .cardTitles {
     display: flex;
     justify-content: space-around;
-
-.playincg-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-flex-grow: 1;    
-margin: 0;
-    padding: 0;
-
 }
 

@@ -10,6 +10,7 @@ function App() {
   function setIntroSate() {
     introSetVisible(false);
     appSetVisible(true);
+    document.querySelector(".space-button").style.display = "none";
   }
 
   return (
@@ -25,7 +26,7 @@ function App() {
           className="space-button"
           onClick={setIntroSate}
         >
-          Click Me To Play The Game Now!
+          Play Now!
         </button>
         {/* <a href="./StarScroll.zip" class="space-button" onClick={setIntroSate}>Click Me To Play The Game Now!</a> */}
       </header>

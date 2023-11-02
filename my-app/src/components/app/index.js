@@ -2,7 +2,12 @@ import React from "react";
 import "./index.css";
 import ComputerCard from "../computerCard";
 import HumanCard from "../humanCard";
+import { useState, useEffect } from "react";
 
+export default function TrumpsApp({ TrumpsAppVisible }) {
+  const [id, setId] = useState(2);
+  const [userId, setUserId] = useState(1);
+  const [compcardvisible, compCardSetVisible] = useState(false);
 
   function newCard() {
     let randomNumberComputer = Math.floor(Math.random() * 30 + 1);
@@ -23,18 +28,6 @@ import HumanCard from "../humanCard";
       const data = await response.json();
       console.log(data);
       setPlanet(data);
-
-
-import { useState } from "react";
-
-export default function TrumpsApp({TrumpsAppVisible}) {
-
-    const [id, setId] = useState(2);
-    const [userId, setUserId] = useState(1);
-    const [compcardvisible, compCardSetVisible] = useState(false);
-    // const [usercardvisible, userCardSetVisible] = useState(false);//    user card state
-//
-
     }
     fetchCard();
   }, [userId]);
@@ -52,38 +45,44 @@ export default function TrumpsApp({TrumpsAppVisible}) {
       console.log(data);
       setCompPlanet(data);
     }
-
     fetchCard();
   }, [id]);
 
   function challengeComputer(childdata) {
-    //chack if a check box is clicked and alert if not
-    compCardSetVisible(true);
-    comparescores();
+    // console.log("clickworked");
+    // console.log("userchoiseE", userChoise);
+    if (userChoise === undefined) {
+      document.querySelector(".result").innerHTML = "please select a stat";
+    } else {
+      compCardSetVisible(true);
+      comparescores(userChoise);
+    }
   }
 
-  // alert coming too soon maybe put it in a use effect fuction?
+  const [userChoise, setUserChoise] = useState();
+  const [compScore, setCompScore] = useState(0);
+  const [userScore, setUserScore] = useState(0);
 
   function comparescores(userChoise) {
-    if (userChoise === undefined) {
-      alert("please select a stat");
-    } else {
-      console.log(userChoise);
-      const userStat = userChoise[0];
-      const userValue = userChoise[1];
-      const computerValue = compPlanet[userStat];
-      console.log(computerValue);
+    console.log("userchoise", userChoise);
 
-      if (userValue > computerValue) {
-        alert("you won");
-        console.log("youwon");
-      } else if (userValue < computerValue) {
-        alert("you lost");
-      } else {
-        alert("Draw");
-      }
-      //                        comparescores(["rotation_period",planet.rotation_period])
+    const userStat = userChoise[0];
+    const userValue = userChoise[1];
+    const computerValue = compPlanet[userStat];
+    console.log(computerValue);
+
+    if (userValue > computerValue) {
+      document.querySelector(".result").innerHTML = "you won!";
+      setUserScore(userScore + 1);
+    } else if (userValue < computerValue) {
+      document.querySelector(".result").innerHTML = "you lost!";
+      setCompScore(compScore + 1);
+    } else {
+      document.querySelector(".result").innerHTML = "it's a Draw!";
     }
+    document.querySelector('input[type="radio"]:checked').checked = false;
+    // if i call newCard() here it will generate a new card fot the computer (and hide it ) as well   before the user has seen the result
+    // newCard();
   }
 
   //function to take data from children to check computer score
@@ -104,9 +103,12 @@ export default function TrumpsApp({TrumpsAppVisible}) {
             className="HCard"
             id={userId}
             childToParent={childToParent}
-            comparescores={comparescores}
+            userChoise={userChoise}
+            setUserChoise={setUserChoise}
             planet={planet}
           />
+          <p className="result"></p>
+
           <ComputerCard
             className="CCard"
             id={id}
@@ -117,14 +119,22 @@ export default function TrumpsApp({TrumpsAppVisible}) {
         <div className="cardTitles">
           <h2>your Card:</h2>
           <h2> Computer Card:</h2>
-
         </div>
-        <p>Youve Chosen:{data}</p>
+        <p>Score:</p>
+        <p>You= {userScore}</p>
+        <p>Computer= {compScore}</p>
 
         <button className="newcard" onClick={newCard}>
           Generate New Card
         </button>
-        <button className="challengecomputer" onClick={challengeComputer}>
+        <button
+          className="challengecomputer"
+          onClick={() => {
+            console.log("userchoiseD", userChoise);
+            challengeComputer(userChoise);
+          }}
+          // onClick={console.log("userchoiseD", userChoise)}
+        >
           Challenge Computer
         </button>
       </div>

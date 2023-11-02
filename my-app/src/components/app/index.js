@@ -133,7 +133,6 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
             console.log("userchoiseD", userChoise);
             challengeComputer(userChoise);
           }}
-          // onClick={console.log("userchoiseD", userChoise)}
         >
           Challenge Computer
         </button>

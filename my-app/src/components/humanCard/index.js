@@ -21,9 +21,7 @@ function HumanCard({
           type="radio"
           name="planet_stat"
           onClick={() => {
-            console.log("planet.rotation_period", planet.rotation_period);
             setUserChoise(["rotation_period", planet.rotation_period]);
-            console.log("userchoiseC", userChoise);
           }}
         ></input>
       </div>
@@ -49,7 +47,6 @@ function HumanCard({
           name="planet_stat"
           onClick={() => {
             setUserChoise(["diameter", planet.diameter]);
-            console.log("userchoiseC", userChoise);
           }}
         ></input>
       </div>
@@ -62,8 +59,6 @@ function HumanCard({
           name="planet_stat"
           onClick={() => {
             setUserChoise(["population", planet.population]);
-
-            console.log("userchoiseC", userChoise);
           }}
         ></input>
       </div>
@@ -76,7 +71,6 @@ function HumanCard({
           name="planet_stat"
           onClick={() => {
             setUserChoise(["surface_water", planet.surface_water]);
-            console.log("userchoiseC", userChoise);
           }}
         ></input>
       </div>
@@ -85,3 +79,8 @@ function HumanCard({
 }
 
 export default HumanCard;
+
+//if checkbox value = true (checked)
+//store stat_name and stat_value in variable (as an object)
+//go to computerCard and find stat_name and compare stat_value of both cards
+//return winner

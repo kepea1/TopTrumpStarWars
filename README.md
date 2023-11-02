@@ -3,7 +3,7 @@
 # Top Trump Star Wars
 
 
-A Top Trumps game created with the star was free API.  
+A Top Trumps game created with the Star Wars free API.  
 
 
 Check out the game [here](https://top-trump-star-wars-nk1unrdv1-k-velvet-p.vercel.app/)

@@ -3,12 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { inject } from "@vercel/analytics";
 
 
 
 <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet"></link>;
-inject();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

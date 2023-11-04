@@ -52,7 +52,7 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       document.querySelector(".result").style.color = "green";
 
       compCardSetVisible(true);
-      comparescores(userChoise);
+      compareScores(userChoise);
     }
   }
 
@@ -60,7 +60,7 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
   const [compScore, setCompScore] = useState(0);
   const [userScore, setUserScore] = useState(0);
 
-  function comparescores(userChoise) {
+  function compareScores(userChoise) {
     const userStat = userChoise[0];
     const userValue = userChoise[1];
     const computerValue = compPlanet[userStat];
@@ -75,7 +75,8 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       document.querySelector(".result").innerHTML = "it's a Draw!";
     }
     document.querySelector('input[type="radio"]:checked').checked = false;
-    setUserChoise(undefined);
+    setUserChoise();
+
     // if i call newCard() here it will generate a new card for the computer(and hide it), well before the user has seen the result
     // newCard();
   }

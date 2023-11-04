@@ -19,8 +19,6 @@ function App() {
         <TrumpsApp TrumpsAppVisible={appVisible} />
         <Intro introVisible={introVisible} />
 
-        {/* <button onClick={() => introSetVisible(false)}>Click Me To Play The Game Now!</button> */}
-        {/* <button onClick={() =>{ setIntroSate(); userCard()}}>Click Me To Play The Game Now!</button> */}
         <button
           href="./StarScroll.zip"
           className="space-button"
@@ -28,7 +26,6 @@ function App() {
         >
           Play Now!
         </button>
-        {/* <a href="./StarScroll.zip" class="space-button" onClick={setIntroSate}>Click Me To Play The Game Now!</a> */}
       </header>
     </div>
   );

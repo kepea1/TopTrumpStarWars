@@ -14,8 +14,6 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
     let randomNumberUser = Math.floor(Math.random() * 30 + 1);
     setId(randomNumberComputer);
     setUserId(randomNumberUser);
-    console.log(setId);
-    console.log(setUserId);
     compCardSetVisible(false); //hide computer card
     setData("");
   }
@@ -26,34 +24,33 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
     async function fetchCard() {
       const response = await fetch(`https://swapi.dev/api/planets/${userId}/`);
       const data = await response.json();
-      console.log(data);
       setPlanet(data);
     }
     fetchCard();
   }, [userId]);
 
-  // function userCard() {
-  //     userCardSetVisible(true);
-  // }
-
   const [compPlanet, setCompPlanet] = useState("Planet Pending...");
-  //console.log(id);
+
   useEffect(() => {
     async function fetchCard() {
       const response = await fetch(`https://swapi.dev/api/planets/${id}`);
       const data = await response.json();
-      console.log(data);
       setCompPlanet(data);
     }
     fetchCard();
   }, [id]);
 
-  function challengeComputer(childdata) {
-    // console.log("clickworked");
-    // console.log("userchoiseE", userChoise);
+  function challengeComputer(userChoise) {
     if (userChoise === undefined) {
       document.querySelector(".result").innerHTML = "please select a stat";
+      document.querySelector(".result").style.color = "red";
+    } else if (userChoise[1] === "unknown") {
+      document.querySelector(".result").innerHTML =
+        "Sorry stat unavailable - please select another stat";
+      document.querySelector(".result").style.color = "red";
     } else {
+      document.querySelector(".result").style.color = "green";
+
       compCardSetVisible(true);
       comparescores(userChoise);
     }
@@ -64,12 +61,9 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
   const [userScore, setUserScore] = useState(0);
 
   function comparescores(userChoise) {
-    console.log("userchoise", userChoise);
-
     const userStat = userChoise[0];
     const userValue = userChoise[1];
     const computerValue = compPlanet[userStat];
-    console.log(computerValue);
 
     if (userValue > computerValue) {
       document.querySelector(".result").innerHTML = "you won!";
@@ -81,7 +75,8 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       document.querySelector(".result").innerHTML = "it's a Draw!";
     }
     document.querySelector('input[type="radio"]:checked').checked = false;
-    // if i call newCard() here it will generate a new card fot the computer (and hide it ) as well   before the user has seen the result
+    setUserChoise(undefined);
+    // if i call newCard() here it will generate a new card for the computer(and hide it), well before the user has seen the result
     // newCard();
   }
 
@@ -98,7 +93,6 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
       <div>
         <h1>Star Wars Top Trumps</h1>
         <div className="cardLayout">
-          {/* <HumanCard  className="HCard" id={userId} childToParent={childToParent} visible={usercardvisible}/> */}
           <HumanCard
             className="HCard"
             id={userId}
@@ -130,7 +124,6 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
         <button
           className="challengecomputer"
           onClick={() => {
-            console.log("userchoiseD", userChoise);
             challengeComputer(userChoise);
           }}
         >

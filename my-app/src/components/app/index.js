@@ -22,7 +22,8 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
 
   useEffect(() => {
     async function fetchCard() {
-      const response = await fetch(`https://swapi.dev/api/planets/${userId}/`);
+      const response = await fetch(`https://swapi.py4e.com/api/planets/1${userId}/`);
+      // const response = await fetch(`https://swapi.dev/api/planets/${userId}/`);
       const data = await response.json();
       setPlanet(data);
     }
@@ -33,7 +34,8 @@ export default function TrumpsApp({ TrumpsAppVisible }) {
 
   useEffect(() => {
     async function fetchCard() {
-      const response = await fetch(`https://swapi.dev/api/planets/${id}`);
+      const response = await fetch(`https://swapi.py4e.com/api/planets/1${id}`);
+      // const response = await fetch(`https://swapi.dev/api/planets/${id}`);
       const data = await response.json();
       setCompPlanet(data);
     }
